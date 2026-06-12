@@ -222,6 +222,32 @@ animation:strokeFloat2 11s ease-in-out infinite alternate;
         linear-gradient(to bottom,transparent 0,#000 var(--banner-fade-y),#000 calc(100% - var(--banner-fade-y)),transparent 100%);
       mask-composite:intersect;
     }
+    .header-banner-video-stack{
+      display:block;width:100%;position:relative;z-index:1;
+      aspect-ratio:21/9;
+      -webkit-mask-image:
+        linear-gradient(to right,transparent 0,#000 var(--banner-fade-x),#000 calc(100% - var(--banner-fade-x)),transparent 100%),
+        linear-gradient(to bottom,transparent 0,#000 var(--banner-fade-y),#000 calc(100% - var(--banner-fade-y)),transparent 100%);
+      -webkit-mask-composite:source-in;
+      mask-image:
+        linear-gradient(to right,transparent 0,#000 var(--banner-fade-x),#000 calc(100% - var(--banner-fade-x)),transparent 100%),
+        linear-gradient(to bottom,transparent 0,#000 var(--banner-fade-y),#000 calc(100% - var(--banner-fade-y)),transparent 100%);
+      mask-composite:intersect;
+    }
+    .header-banner-video-stack .header-banner-video{
+      position:absolute;inset:0;width:100%;height:100%;
+      aspect-ratio:auto;max-width:none;
+      -webkit-mask-image:none;mask-image:none;
+      object-fit:cover;
+      background:#000;
+      pointer-events:none;
+      opacity:0;
+      transition:opacity var(--hero-crossfade,0ms) ease;
+      will-change:opacity;
+    }
+    .header-banner-video-stack .header-banner-video.is-top{
+      opacity:1;z-index:2;
+    }
     .header-banner-video{
       object-fit:cover;
       background:#000;
@@ -615,8 +641,11 @@ animation:particleMove linear infinite;
   <header class="topbar topbar--banner">
     <div class="topbar-inner topbar-inner--banner">
       <a class="header-banner-link" href="#" onclick="showPage('home',{userGesture:true});return false;" aria-label="ART-EKO — на главную">
-        <!-- TEMP LOCAL: контекстная видеошапка — home var01 / inner в работу.mp4 -->
-        <video id="heroBannerVideo" class="header-banner-video" src="../video/var 01.mp4" autoplay muted playsinline disablePictureInPicture controlslist="nodownload nofullscreen noremoteplayback" aria-label="ART-EKO — Искусство технологий · Татьяна Гайдук · AI Production нового поколения"></video>
+        <!-- LOCAL 4A: var01 / в работу · звук по клику шапки или острова -->
+        <div class="header-banner-video-stack" id="heroBannerStack" style="--hero-crossfade:0ms">
+          <video id="heroBannerVideoA" class="header-banner-video is-top" src="video/var 01.mp4" autoplay muted playsinline preload="auto" disablePictureInPicture controlslist="nodownload nofullscreen noremoteplayback" aria-label="ART-EKO — Искусство технологий · Татьяна Гайдук · AI Production нового поколения"></video>
+          <video id="heroBannerVideoB" class="header-banner-video" src="video/var 01.mp4" muted playsinline preload="auto" disablePictureInPicture controlslist="nodownload nofullscreen noremoteplayback" aria-hidden="true"></video>
+        </div>
         <!-- RESERVE image: images/hero/chapka-21x9-active.jpg -->
       </a>
     </div>
@@ -743,87 +772,137 @@ function caseWorks(type,title){const icons={case:'Открыть кейс',audio
 const ORDER = ['visual','video','content','web','music','agents'];
 document.getElementById('directionsGrid').innerHTML=ORDER.map(id=>directionCard(id,DATA[id])).join('');
 document.addEventListener('contextmenu',e=>{if(e.target.closest('.work')||e.target.closest('.modal'))e.preventDefault()});
-/* TEMP LOCAL: контекстная видеошапка — home / inner + первый проход со звуком */
+/* LOCAL 4A: звук по жесту — шапка→var01 · остров→в работу · один проход */
 (function(){
-  const HERO_HOME='../video/var 01.mp4';
-  const HERO_INNER='../video/в работу.mp4';
+  const HERO_HOME='video/var 01.mp4';
+  const HERO_INNER='video/в работу.mp4';
   const LOOP_LEAD=0.2;
-  const video=document.getElementById('heroBannerVideo');
-  if(!video)return;
+  const stack=document.getElementById('heroBannerStack');
+  const videoA=document.getElementById('heroBannerVideoA');
+  const videoB=document.getElementById('heroBannerVideoB');
+  if(!stack||!videoA||!videoB)return;
+  let topVideo=videoA;
+  let backVideo=videoB;
   let currentCtx='home';
   let firstPassPending=false;
   let loopSeeking=false;
-  let loopCount=0;
   function endsWithPath(src,rel){return decodeURIComponent(src||'').replace(/\\/g,'/').endsWith(rel.replace(/^\.\.\//,''))}
-  function muteAfterFirstPass(reason){
+  function muteAfterFirstPass(){
     if(!firstPassPending)return;
     firstPassPending=false;
-    video.muted=true;
-    window.__heroVideoState=Object.assign({},window.__heroVideoState||{},{firstPassDone:true,muteReason:reason,muted:video.muted});
+    topVideo.muted=true;
+    backVideo.muted=true;
+  }
+  function seekToStart(v,cb){
+    const done=function(){v.removeEventListener('seeked',done);if(cb)cb()};
+    v.addEventListener('seeked',done);
+    try{if(typeof v.fastSeek==='function')v.fastSeek(0);else v.currentTime=0}catch(e){v.currentTime=0}
+    if(v.readyState>=1&&v.currentTime===0)setTimeout(done,0);
+  }
+  function doLoop(v){
+    if(loopSeeking||!v.duration||!isFinite(v.duration))return;
+    loopSeeking=true;
+    seekToStart(v,function(){
+      loopSeeking=false;
+      v.play().catch(function(){});
+    });
   }
   function smoothLoopTick(){
-    if(loopSeeking||!video.duration||!isFinite(video.duration))return;
-    if(video.duration-video.currentTime<=LOOP_LEAD){
-      if(firstPassPending)muteAfterFirstPass('end-of-first-pass');
-      loopSeeking=true;
-      loopCount+=1;
-      video.currentTime=0;
-      video.play().catch(function(){});
-      loopSeeking=false;
-      window.__heroVideoState=Object.assign({},window.__heroVideoState||{},{loopCount:loopCount,currentTime:video.currentTime,duration:video.duration,muted:video.muted});
+    const v=topVideo;
+    if(loopSeeking||!v.duration||!isFinite(v.duration))return;
+    if(v.duration-v.currentTime<=LOOP_LEAD){
+      if(firstPassPending)muteAfterFirstPass();
+      doLoop(v);
     }
   }
-  function startPlayback(userGesture){
-    video.volume=1;
-    if(userGesture){
-      video.muted=false;
+  videoA.addEventListener('timeupdate',smoothLoopTick);
+  videoB.addEventListener('timeupdate',smoothLoopTick);
+  function playVideo(v,wantSound){
+    v.volume=1;
+    if(wantSound){
+      v.muted=false;
       firstPassPending=true;
-      return video.play().then(function(){window.__heroVideoState=Object.assign({},window.__heroVideoState||{},{autoplaySoundAttempt:'gesture-ok',muted:video.muted});}).catch(function(){
-        video.muted=true;
+      return v.play().catch(function(){
+        v.muted=true;
         firstPassPending=true;
-        window.__heroVideoState=Object.assign({},window.__heroVideoState||{},{autoplaySoundAttempt:'gesture-fallback-muted'});
-        return video.play().catch(function(){});
+        return v.play().catch(function(){});
       });
     }
-    video.muted=false;
-    firstPassPending=true;
-    return video.play().then(function(){window.__heroVideoState=Object.assign({},window.__heroVideoState||{},{autoplaySoundAttempt:'autoplay-unmuted-ok',muted:video.muted});}).catch(function(){
-      video.muted=true;
-      firstPassPending=true;
-      window.__heroVideoState=Object.assign({},window.__heroVideoState||{},{autoplaySoundAttempt:'autoplay-blocked-muted'});
-      return video.play().catch(function(){});
-    });
+    v.muted=true;
+    firstPassPending=false;
+    return v.play().catch(function(){});
+  }
+  function crossfadeTo(incoming,wantSound){
+    const outgoing=topVideo;
+    if(outgoing===incoming){
+      incoming.currentTime=0;
+      return playVideo(incoming,wantSound);
+    }
+    incoming.classList.add('is-top');
+    outgoing.classList.remove('is-top');
+    topVideo=incoming;
+    backVideo=outgoing;
+    outgoing.pause();
+    outgoing.muted=true;
+    incoming.currentTime=0;
+    return playVideo(incoming,wantSound);
+  }
+  function prepareIncoming(src){
+    const inc=backVideo;
+    if(!endsWithPath(inc.currentSrc||inc.getAttribute('src')||'',src)){
+      inc.src=src;
+      inc.load();
+    }
+    return inc;
+  }
+  function wantSoundFor(ctx,userGesture){
+    if(!userGesture)return false;
+    if(ctx==='home')return true;
+    return ctx==='inner'&&currentCtx==='home';
   }
   function loadContext(ctx,userGesture){
     const src=ctx==='home'?HERO_HOME:HERO_INNER;
+    const wantSound=wantSoundFor(ctx,userGesture);
     currentCtx=ctx;
-    loopCount=0;
     firstPassPending=false;
-    if(!endsWithPath(video.getAttribute('src'),src)){
-      video.src=src;
-      video.load();
-    }else{
-      video.currentTime=0;
+    if(endsWithPath(topVideo.currentSrc||topVideo.src,src)){
+      topVideo.currentTime=0;
+      return playVideo(topVideo,wantSound);
     }
-    window.__heroVideoState={ctx:ctx,src:src,userGesture:!!userGesture,firstPassDone:false,muted:video.muted,volume:video.volume};
-    startPlayback(userGesture);
+    return crossfadeTo(prepareIncoming(src),wantSound);
   }
   function onNavigate(pageId,userGesture){
     const ctx=pageId==='home'?'home':'inner';
-    if(ctx===currentCtx)return;
+    if(ctx===currentCtx){
+      if(ctx==='home'&&userGesture)loadContext('home',true);
+      return;
+    }
     loadContext(ctx,userGesture);
   }
-  video.addEventListener('timeupdate',smoothLoopTick);
-  video.addEventListener('ended',function(){
-    if(firstPassPending)muteAfterFirstPass('ended');
-    if(loopSeeking)return;
-    loopSeeking=true;
-    video.currentTime=0;
-    video.play().catch(function(){});
-    loopSeeking=false;
-  });
-  window.__heroVideoRouter={onNavigate:onNavigate,loadContext:loadContext,getState:function(){return Object.assign({ctx:currentCtx,firstPassPending:firstPassPending,loopCount:loopCount,src:video.currentSrc||video.src,muted:video.muted,volume:video.volume,paused:video.paused,currentTime:video.currentTime,duration:video.duration},window.__heroVideoState||{})}};
-  loadContext('home',false);
+  function bootstrapHome(){
+    currentCtx='home';
+    firstPassPending=false;
+    const v=topVideo;
+    v.volume=1;
+    v.muted=false;
+    firstPassPending=true;
+    v.play().catch(function(){
+      v.muted=true;
+      firstPassPending=false;
+      return v.play().catch(function(){});
+    });
+  }
+  videoB.preload='auto';
+  videoB.src=HERO_INNER;
+  videoB.load();
+  window.__heroVideoRouter={
+    onNavigate:onNavigate,
+    getState:function(){
+      const v=topVideo;
+      return{ctx:currentCtx,src:v.currentSrc||v.src,muted:v.muted,paused:v.paused,firstPassPending:firstPassPending};
+    }
+  };
+  bootstrapHome();
 })();
 </script>
 

@@ -1,0 +1,352 @@
+{
+  "preview": "http://127.0.0.1:8767/INTERACTIV PORTFOLIO/portfolio.html",
+  "testedAt": "2026-06-12T18:58:02.744Z",
+  "results": [
+    {
+      "label": "default-seek",
+      "query": "crossfadeMs=0&loopMode=seek",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "homeStart": {
+        "ctx": "home",
+        "srcOk": true,
+        "muted": true,
+        "scheme": "4A"
+      },
+      "homeJitter": {
+        "jumps": 0,
+        "pauses": 0,
+        "maxGap": 0,
+        "sampleCount": 34,
+        "routerLoops": 0
+      },
+      "transitionShots": [
+        {
+          "ms": 0,
+          "blackPct": 0
+        },
+        {
+          "ms": 100,
+          "blackPct": 0
+        },
+        {
+          "ms": 250,
+          "blackPct": 0
+        },
+        {
+          "ms": 400,
+          "blackPct": 0
+        },
+        {
+          "ms": 500,
+          "blackPct": 0
+        }
+      ],
+      "innerStart": {
+        "ctx": "inner",
+        "srcOk": true,
+        "muted": true,
+        "crossfadeMs": 0
+      },
+      "innerAfterPass": {
+        "muted": true,
+        "loopCount": 2
+      },
+      "innerJitter": {
+        "jumps": 0,
+        "pauses": 0,
+        "maxGap": 0,
+        "sampleCount": 37,
+        "routerLoops": 2
+      },
+      "backHome": {
+        "ctx": "home",
+        "srcOk": true,
+        "muted": true
+      }
+    },
+    {
+      "label": "crossfade400-seek",
+      "query": "crossfadeMs=400&loopMode=seek",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "homeStart": {
+        "ctx": "home",
+        "srcOk": true,
+        "muted": true,
+        "scheme": "4A"
+      },
+      "homeJitter": {
+        "jumps": 0,
+        "pauses": 0,
+        "maxGap": 0,
+        "sampleCount": 31,
+        "routerLoops": 0
+      },
+      "transitionShots": [
+        {
+          "ms": 0,
+          "blackPct": null
+        },
+        {
+          "ms": 100,
+          "blackPct": 0
+        },
+        {
+          "ms": 250,
+          "blackPct": 0
+        },
+        {
+          "ms": 400,
+          "blackPct": 0
+        },
+        {
+          "ms": 500,
+          "blackPct": 0
+        }
+      ],
+      "innerStart": {
+        "ctx": "inner",
+        "srcOk": true,
+        "muted": true,
+        "crossfadeMs": 400
+      },
+      "innerAfterPass": {
+        "muted": true,
+        "loopCount": 2
+      },
+      "innerJitter": {
+        "jumps": 0,
+        "pauses": 0,
+        "maxGap": 0,
+        "sampleCount": 35,
+        "routerLoops": 2
+      },
+      "backHome": {
+        "ctx": "home",
+        "srcOk": true,
+        "muted": true
+      }
+    },
+    {
+      "label": "default-seek-mobile",
+      "query": "crossfadeMs=0&loopMode=seek",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "homeStart": {
+        "ctx": "home",
+        "srcOk": true,
+        "muted": true,
+        "scheme": "4A"
+      },
+      "homeJitter": {
+        "jumps": 0,
+        "pauses": 0,
+        "maxGap": 0,
+        "sampleCount": 38,
+        "routerLoops": 0
+      },
+      "transitionShots": [
+        {
+          "ms": 0,
+          "blackPct": 0
+        },
+        {
+          "ms": 100,
+          "blackPct": 0
+        },
+        {
+          "ms": 250,
+          "blackPct": 0
+        },
+        {
+          "ms": 400,
+          "blackPct": 0
+        },
+        {
+          "ms": 500,
+          "blackPct": 0
+        }
+      ],
+      "innerStart": {
+        "ctx": "inner",
+        "srcOk": true,
+        "muted": true,
+        "crossfadeMs": 0
+      },
+      "innerAfterPass": {
+        "muted": true,
+        "loopCount": 2
+      },
+      "innerJitter": {
+        "jumps": 0,
+        "pauses": 0,
+        "maxGap": 0,
+        "sampleCount": 43,
+        "routerLoops": 2
+      },
+      "backHome": {
+        "ctx": "home",
+        "srcOk": true,
+        "muted": true
+      }
+    },
+    {
+      "label": "crossfade400-seek-mobile",
+      "query": "crossfadeMs=400&loopMode=seek",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "homeStart": {
+        "ctx": "home",
+        "srcOk": true,
+        "muted": true,
+        "scheme": "4A"
+      },
+      "homeJitter": {
+        "jumps": 0,
+        "pauses": 0,
+        "maxGap": 0,
+        "sampleCount": 45,
+        "routerLoops": 0
+      },
+      "transitionShots": [
+        {
+          "ms": 0,
+          "blackPct": 0
+        },
+        {
+          "ms": 100,
+          "blackPct": 0
+        },
+        {
+          "ms": 250,
+          "blackPct": 0
+        },
+        {
+          "ms": 400,
+          "blackPct": 0
+        },
+        {
+          "ms": 500,
+          "blackPct": null
+        }
+      ],
+      "innerStart": {
+        "ctx": "inner",
+        "srcOk": true,
+        "muted": true,
+        "crossfadeMs": 400
+      },
+      "innerAfterPass": {
+        "muted": true,
+        "loopCount": 2
+      },
+      "innerJitter": {
+        "jumps": 0,
+        "pauses": 0,
+        "maxGap": 0,
+        "sampleCount": 50,
+        "routerLoops": 2
+      },
+      "backHome": {
+        "ctx": "home",
+        "srcOk": true,
+        "muted": true
+      }
+    },
+    {
+      "label": "default-ended-mobile",
+      "query": "crossfadeMs=0&loopMode=ended",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "homeStart": {
+        "ctx": "home",
+        "srcOk": true,
+        "muted": true,
+        "scheme": "4A"
+      },
+      "homeJitter": {
+        "jumps": 0,
+        "pauses": 0,
+        "maxGap": 0,
+        "sampleCount": 40,
+        "routerLoops": 0
+      },
+      "transitionShots": [
+        {
+          "ms": 0,
+          "blackPct": 0
+        },
+        {
+          "ms": 100,
+          "blackPct": 0
+        },
+        {
+          "ms": 250,
+          "blackPct": 0
+        },
+        {
+          "ms": 400,
+          "blackPct": 0
+        },
+        {
+          "ms": 500,
+          "blackPct": 0
+        }
+      ],
+      "innerStart": {
+        "ctx": "inner",
+        "srcOk": true,
+        "muted": true,
+        "crossfadeMs": 0
+      },
+      "innerAfterPass": {
+        "muted": true,
+        "loopCount": 2
+      },
+      "innerJitter": {
+        "jumps": 0,
+        "pauses": 0,
+        "maxGap": 0,
+        "sampleCount": 43,
+        "routerLoops": 2
+      },
+      "backHome": {
+        "ctx": "home",
+        "srcOk": true,
+        "muted": true
+      }
+    }
+  ],
+  "analysis": {
+    "loopSeekVsEnded": {
+      "seekJumps": 0,
+      "endedJumps": 0,
+      "seekPauses": 0,
+      "endedPauses": 0,
+      "seekRouterLoops": 2,
+      "endedRouterLoops": 2
+    },
+    "crossfadeBlackFlash": {
+      "instantMaxBlack": 0,
+      "fade400MaxBlack": 0,
+      "instantAt0ms": 0,
+      "fadeAt250ms": 0
+    },
+    "scheme4A": {
+      "homeAlwaysMuted": false,
+      "innerSoundOnTransition": [],
+      "backHomeSilent": true
+    }
+  }
+}
