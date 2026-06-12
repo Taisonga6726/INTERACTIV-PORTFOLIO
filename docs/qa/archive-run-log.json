@@ -1,0 +1,463 @@
+{
+  "moved": [
+    {
+      "from": "baner glav yahta .png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/baner glav yahta .png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "chapka 02 .jpg",
+      "to": "archive/root-snapshots/root-inactive-after-3a/chapka 02 .jpg",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "chapka 02 png.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/chapka 02 png.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "chapka 03 png.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/chapka 03 png.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "chapka 04 png.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/chapka 04 png.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "chapka 21 на 9 .jpg",
+      "to": "archive/root-snapshots/root-inactive-after-3a/chapka 21 на 9 .jpg",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "chapka ДА 01 .png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/chapka ДА 01 .png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "chapka ДА 02 .png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/chapka ДА 02 .png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "chapka ДА.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/chapka ДА.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "chapka ДАДА  01 .png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/chapka ДАДА  01 .png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "chapka ДАДА.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/chapka ДАДА.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "chapka.jpg",
+      "to": "archive/root-snapshots/root-inactive-after-3a/chapka.jpg",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "ChatGPT Image 7 июн. 2026 г., 23_23_56 (2).png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/ChatGPT Image 7 июн. 2026 г., 23_23_56 (2).png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-anim-check-frame1.png",
+      "to": "archive/old-images/qa-root-duplicates/header-anim-check-frame1.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-anim-check-frame2.png",
+      "to": "archive/old-images/qa-root-duplicates/header-anim-check-frame2.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-anim-check-frame3.png",
+      "to": "archive/old-images/qa-root-duplicates/header-anim-check-frame3.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-anim-check-frame4.png",
+      "to": "archive/old-images/qa-root-duplicates/header-anim-check-frame4.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-anim-check-preview.gif",
+      "to": "archive/old-images/qa-root-duplicates/header-anim-check-preview.gif",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-anim-demo-frame1.png",
+      "to": "archive/old-images/qa-root-duplicates/header-anim-demo-frame1.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-anim-demo-frame2.png",
+      "to": "archive/old-images/qa-root-duplicates/header-anim-demo-frame2.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-anim-demo-frame3.png",
+      "to": "archive/old-images/qa-root-duplicates/header-anim-demo-frame3.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-anim-demo-frame4.png",
+      "to": "archive/old-images/qa-root-duplicates/header-anim-demo-frame4.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-anim-demo-preview.gif",
+      "to": "archive/old-images/qa-root-duplicates/header-anim-demo-preview.gif",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-chapka-24 на 7.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/header-chapka-24 на 7.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-chapka-24 на7 var 02.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/header-chapka-24 на7 var 02.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-chapka-after-blend.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/header-chapka-after-blend.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-chapka-before-blend.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/header-chapka-before-blend.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-chapka-desktop.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/header-chapka-desktop.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-chapka-mobile.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/header-chapka-mobile.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-chapka-tablet.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/header-chapka-tablet.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-final-desktop.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/header-final-desktop.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-final-mobile.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/header-final-mobile.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-hero-21x9-desktop.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/header-hero-21x9-desktop.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-hero-21x9-mobile.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/header-hero-21x9-mobile.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-hero-21x9-tablet.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/header-hero-21x9-tablet.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-hero-24x7-desktop.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/header-hero-24x7-desktop.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-luxury-12.4-desktop.png",
+      "to": "archive/old-images/qa-root-duplicates/header-luxury-12.4-desktop.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-luxury-12.4-mobile.png",
+      "to": "archive/old-images/qa-root-duplicates/header-luxury-12.4-mobile.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-luxury-12.4-obs-strip.png",
+      "to": "archive/old-images/qa-root-duplicates/header-luxury-12.4-obs-strip.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-luxury-12.4-obs1.png",
+      "to": "archive/old-images/qa-root-duplicates/header-luxury-12.4-obs1.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-luxury-12.4-obs2.png",
+      "to": "archive/old-images/qa-root-duplicates/header-luxury-12.4-obs2.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-luxury-12.4-obs3.png",
+      "to": "archive/old-images/qa-root-duplicates/header-luxury-12.4-obs3.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "header-luxury-12.4-preview.gif",
+      "to": "archive/old-images/qa-root-duplicates/header-luxury-12.4-preview.gif",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "iskusstvo .jpg",
+      "to": "archive/root-snapshots/root-inactive-after-3a/iskusstvo .jpg",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "logo-sign.jpg",
+      "to": "archive/root-snapshots/root-inactive-after-3a/logo-sign.jpg",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "logo-sign.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/logo-sign.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "logo-tg-luxury.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/logo-tg-luxury.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "logo_bez.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/logo_bez.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "logo_luxury_final.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/logo_luxury_final.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "logo_tg_final.png",
+      "to": "archive/root-snapshots/root-inactive-after-3a/logo_tg_final.png",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "без меня ВАУ .jpg",
+      "to": "archive/root-snapshots/root-inactive-after-3a/без меня ВАУ .jpg",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "ЛОГОТИП.jpg",
+      "to": "archive/root-snapshots/root-inactive-after-3a/ЛОГОТИП.jpg",
+      "reason": "root inactive duplicate"
+    },
+    {
+      "from": "images/hero/chapka 02 .jpg",
+      "to": "archive/old-images/hero-working-copies/chapka 02 .jpg",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/chapka 02 png.png",
+      "to": "archive/old-images/hero-working-copies/chapka 02 png.png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/chapka 03 png.png",
+      "to": "archive/old-images/hero-working-copies/chapka 03 png.png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/chapka 04 png.png",
+      "to": "archive/old-images/hero-working-copies/chapka 04 png.png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/chapka 21 на 9 .jpg",
+      "to": "archive/old-images/hero-working-copies/chapka 21 на 9 .jpg",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/chapka ДА 01 .png",
+      "to": "archive/old-images/hero-working-copies/chapka ДА 01 .png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/chapka ДА 02 .png",
+      "to": "archive/old-images/hero-working-copies/chapka ДА 02 .png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/chapka ДА.png",
+      "to": "archive/old-images/hero-working-copies/chapka ДА.png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/chapka ДАДА  01 .png",
+      "to": "archive/old-images/hero-working-copies/chapka ДАДА  01 .png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/chapka ДАДА.png",
+      "to": "archive/old-images/hero-working-copies/chapka ДАДА.png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/chapka.jpg",
+      "to": "archive/old-images/hero-working-copies/chapka.jpg",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/header-chapka-24 на 7.png",
+      "to": "archive/old-images/hero-working-copies/header-chapka-24 на 7.png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/header-chapka-24 на7 var 02.png",
+      "to": "archive/old-images/hero-working-copies/header-chapka-24 на7 var 02.png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/header-chapka-after-blend.png",
+      "to": "archive/old-images/hero-working-copies/header-chapka-after-blend.png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/header-chapka-before-blend.png",
+      "to": "archive/old-images/hero-working-copies/header-chapka-before-blend.png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/header-chapka-desktop.png",
+      "to": "archive/old-images/hero-working-copies/header-chapka-desktop.png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/header-chapka-mobile.png",
+      "to": "archive/old-images/hero-working-copies/header-chapka-mobile.png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/header-chapka-tablet.png",
+      "to": "archive/old-images/hero-working-copies/header-chapka-tablet.png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/header-final-desktop.png",
+      "to": "archive/old-images/hero-working-copies/header-final-desktop.png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/header-final-mobile.png",
+      "to": "archive/old-images/hero-working-copies/header-final-mobile.png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/header-hero-21x9-desktop.png",
+      "to": "archive/old-images/hero-working-copies/header-hero-21x9-desktop.png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/header-hero-21x9-mobile.png",
+      "to": "archive/old-images/hero-working-copies/header-hero-21x9-mobile.png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/header-hero-21x9-tablet.png",
+      "to": "archive/old-images/hero-working-copies/header-hero-21x9-tablet.png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/header-hero-24x7-desktop.png",
+      "to": "archive/old-images/hero-working-copies/header-hero-24x7-desktop.png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/без меня ВАУ .jpg",
+      "to": "archive/old-images/hero-working-copies/без меня ВАУ .jpg",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/Я  16 на 9  на банер!.png",
+      "to": "archive/old-images/hero-working-copies/Я  16 на 9  на банер!.png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/hero/Я  21 на 9  на банер!.png",
+      "to": "archive/old-images/hero-working-copies/Я  21 на 9  на банер!.png",
+      "reason": "images/hero inactive duplicate"
+    },
+    {
+      "from": "images/ui/logo-sign.jpg",
+      "to": "archive/old-images/ui-working-copies/logo-sign.jpg",
+      "reason": "images/ui duplicate"
+    },
+    {
+      "from": "images/ui/logo-sign.png",
+      "to": "archive/old-images/ui-working-copies/logo-sign.png",
+      "reason": "images/ui duplicate"
+    },
+    {
+      "from": "images/ui/logo-tg-luxury.png",
+      "to": "archive/old-images/ui-working-copies/logo-tg-luxury.png",
+      "reason": "images/ui duplicate"
+    },
+    {
+      "from": "images/ui/logo-tg.png",
+      "to": "archive/old-images/ui-working-copies/logo-tg.png",
+      "reason": "images/ui duplicate"
+    },
+    {
+      "from": "images/ui/logo_bez.png",
+      "to": "archive/old-images/ui-working-copies/logo_bez.png",
+      "reason": "images/ui duplicate"
+    },
+    {
+      "from": "images/ui/logo_luxury_final.png",
+      "to": "archive/old-images/ui-working-copies/logo_luxury_final.png",
+      "reason": "images/ui duplicate"
+    },
+    {
+      "from": "images/ui/logo_tg_final.png",
+      "to": "archive/old-images/ui-working-copies/logo_tg_final.png",
+      "reason": "images/ui duplicate"
+    },
+    {
+      "from": "images/ui/sign-tanya.png",
+      "to": "archive/old-images/ui-working-copies/sign-tanya.png",
+      "reason": "images/ui duplicate"
+    },
+    {
+      "from": "images/ui/ЛОГОТИП.jpg",
+      "to": "archive/old-images/ui-working-copies/ЛОГОТИП.jpg",
+      "reason": "images/ui duplicate"
+    },
+    {
+      "from": "images/portfolio/baner glav yahta .png",
+      "to": "archive/old-images/portfolio-working-copies/baner glav yahta .png",
+      "reason": "images/portfolio duplicate"
+    },
+    {
+      "from": "images/portfolio/ChatGPT Image 7 июн. 2026 г., 23_23_56 (2).png",
+      "to": "archive/old-images/portfolio-working-copies/ChatGPT Image 7 июн. 2026 г., 23_23_56 (2).png",
+      "reason": "images/portfolio duplicate"
+    },
+    {
+      "from": "images/portfolio/iskusstvo .jpg",
+      "to": "archive/old-images/portfolio-working-copies/iskusstvo .jpg",
+      "reason": "images/portfolio duplicate"
+    }
+  ],
+  "skipped": [],
+  "reorganized": [
+    "archive/old-images/root-snapshot -> archive/root-snapshots/phase1-root-snapshot"
+  ]
+}
