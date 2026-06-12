@@ -227,37 +227,6 @@ animation:strokeFloat2 11s ease-in-out infinite alternate;
       background:#000;
       pointer-events:none;
     }
-    /* TEMP LOCAL: панель теста видеошапки */
-    .hero-video-test-panel{
-      max-width:1440px;margin:0 auto 12px;padding:10px 14px;
-      display:flex;flex-wrap:wrap;align-items:center;gap:8px;
-      background:rgba(8,4,24,.82);border:1px solid rgba(245,179,53,.35);
-      border-radius:12px;position:relative;z-index:20;
-    }
-    .hero-video-test-label{
-      font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
-      color:var(--gold2);margin-right:6px;
-    }
-    .hero-video-test-panel button{
-      border:1px solid rgba(245,179,53,.45);background:rgba(20,8,40,.9);
-      color:#fff7e2;border-radius:999px;padding:7px 14px;font-size:12px;font-weight:700;
-      cursor:pointer;transition:.2s ease;
-    }
-    .hero-video-test-panel button:hover{border-color:var(--gold2)}
-    .hero-video-test-panel button.active{
-      background:linear-gradient(135deg,#FFF4A0,#F5B335,#C9851A);
-      color:#1A0500;border-color:transparent;
-    }
-    .hero-video-test-panel button:disabled{
-      opacity:.45;cursor:not-allowed;
-    }
-    .hero-video-test-hint{
-      flex:1 1 100%;font-size:11px;line-height:1.45;color:rgba(255,247,226,.78);
-    }
-    .hero-video-test-sound-on{
-      background:linear-gradient(135deg,#7ee0ff,#1e58ff)!important;
-      color:#fff!important;border-color:transparent!important;
-    }
     .topbar-inner--banner::before,
     .topbar-inner--banner::after{display:none}
     .header-banner-link::before{
@@ -645,22 +614,13 @@ animation:particleMove linear infinite;
        УТВЕРЖДЕНО — НЕ ИЗМЕНЯТЬ БЕЗ СОГЛАСОВАНИЯ -->
   <header class="topbar topbar--banner">
     <div class="topbar-inner topbar-inner--banner">
-      <a class="header-banner-link" href="#" onclick="showPage('home');return false;" aria-label="ART-EKO — на главную">
-        <!-- TEMP LOCAL: video hero test — parent folder ../video/ -->
+      <a class="header-banner-link" href="#" onclick="showPage('home',{userGesture:true});return false;" aria-label="ART-EKO — на главную">
+        <!-- TEMP LOCAL: контекстная видеошапка — home var01 / inner в работу.mp4 -->
         <video id="heroBannerVideo" class="header-banner-video" src="../video/var 01.mp4" autoplay muted playsinline disablePictureInPicture controlslist="nodownload nofullscreen noremoteplayback" aria-label="ART-EKO — Искусство технологий · Татьяна Гайдук · AI Production нового поколения"></video>
         <!-- RESERVE image: images/hero/chapka-21x9-active.jpg -->
       </a>
     </div>
   </header>
-  <div class="hero-video-test-panel" id="heroVideoTestPanel" aria-label="Тест видеошапки">
-    <span class="hero-video-test-label">Тест видеошапки</span>
-    <button type="button" data-hero-video="0" class="active">Вариант 1</button>
-    <button type="button" data-hero-video="1">Вариант 2</button>
-    <button type="button" data-hero-video="2">Вариант 3</button>
-    <button type="button" data-hero-video="3">Вариант 4</button>
-    <button type="button" id="heroEnableSoundBtn">Включить звук</button>
-    <span class="hero-video-test-hint">Тест: звук включается вручную, loop должен быть плавным</span>
-  </div>
   <!-- RESERVE: chapka ДАДА  01 .png — src="chapka ДАДА  01 .png" -->
   <!-- RESERVE: header-chapka-7x1.png — src="header-chapka-7x1.png" -->
   <!-- RESERVE: header-chapka-24 на 7.png — src="header-chapka-24 на 7.png" -->
@@ -773,95 +733,97 @@ function directionCard(id,d){
 }
 function folderCard(did,c){return `<a class="folder" onclick="openCategory('${did}','${c.id}')"><span class="silk"></span><div><h3>${c.title}</h3><p>${c.desc}</p></div><span>Открыть папку →</span></a>`}
 function subCard(did,cid,name,i){return `<a class="folder" onclick="openGallery('${did}','${cid}',${i})"><span class="silk"></span><div><h3>${name}</h3><p>Подборка работ и примеров в категории «${name}».</p></div><span>${5+i%4} работ →</span></a>`}
-function showPage(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
-function openDirection(id){const d=DATA[id];document.getElementById('directionScreen').innerHTML=`<div class="breadcrumbs"><span class="pill">Портфолио</span><span>/</span><span>${d.title}</span></div><div class="hero-row"><h1>${d.title}</h1><p class="hero-copy">${d.desc}</p></div><div class="folder-grid">${d.categories.map(c=>folderCard(id,c)).join('')}</div>`;showPage('directionScreen')}
-function openCategory(did,cid){const d=DATA[did];const c=d.categories.find(x=>x.id===cid);if(c.subs){document.getElementById('categoryScreen').innerHTML=`<div class="breadcrumbs"><span class="pill">Портфолио</span><span>/</span><a onclick="openDirection('${did}')">${d.title}</a><span>/</span><span>${c.title}</span></div><div class="hero-row"><h1>${c.title}</h1><p class="hero-copy">${c.desc}</p></div><div class="folder-grid">${c.subs.map((s,i)=>subCard(did,cid,s,i)).join('')}</div>`;showPage('categoryScreen')}else{openGallery(did,cid,0)}}
-function openGallery(did,cid,index){const d=DATA[did];const c=d.categories.find(x=>x.id===cid);const title=c.subs?c.subs[index]:c.title;const visual=d.type==='gallery';const cards=visual?galleryWorks(title):caseWorks(d.type,title);document.getElementById('galleryScreen').innerHTML=`<div class="breadcrumbs"><span class="pill">Портфолио</span><span>/</span><a onclick="openDirection('${did}')">${d.title}</a><span>/</span><a onclick="openCategory('${did}','${cid}')">${c.title}</a><span>/</span><span>${title}</span></div><div class="hero-row"><h1>${title}</h1><p class="hero-copy">${visual?'Превью показаны с защитным watermark. Оригиналы доступны только после оплаты или согласования.':'Примеры работ с коротким описанием задачи, результата и формата.'}</p></div>${cards}`;showPage('galleryScreen')}
+function showPage(id,opts){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});if(window.__heroVideoRouter)window.__heroVideoRouter.onNavigate(id,!!(opts&&opts.userGesture))}
+function openDirection(id){const d=DATA[id];document.getElementById('directionScreen').innerHTML=`<div class="breadcrumbs"><span class="pill">Портфолио</span><span>/</span><span>${d.title}</span></div><div class="hero-row"><h1>${d.title}</h1><p class="hero-copy">${d.desc}</p></div><div class="folder-grid">${d.categories.map(c=>folderCard(id,c)).join('')}</div>`;showPage('directionScreen',{userGesture:true})}
+function openCategory(did,cid){const d=DATA[did];const c=d.categories.find(x=>x.id===cid);if(c.subs){document.getElementById('categoryScreen').innerHTML=`<div class="breadcrumbs"><span class="pill">Портфолио</span><span>/</span><a onclick="openDirection('${did}')">${d.title}</a><span>/</span><span>${c.title}</span></div><div class="hero-row"><h1>${c.title}</h1><p class="hero-copy">${c.desc}</p></div><div class="folder-grid">${c.subs.map((s,i)=>subCard(did,cid,s,i)).join('')}</div>`;showPage('categoryScreen',{userGesture:true})}else{openGallery(did,cid,0)}}
+function openGallery(did,cid,index){const d=DATA[did];const c=d.categories.find(x=>x.id===cid);const title=c.subs?c.subs[index]:c.title;const visual=d.type==='gallery';const cards=visual?galleryWorks(title):caseWorks(d.type,title);document.getElementById('galleryScreen').innerHTML=`<div class="breadcrumbs"><span class="pill">Портфолио</span><span>/</span><a onclick="openDirection('${did}')">${d.title}</a><span>/</span><a onclick="openCategory('${did}','${cid}')">${c.title}</a><span>/</span><span>${title}</span></div><div class="hero-row"><h1>${title}</h1><p class="hero-copy">${visual?'Превью показаны с защитным watermark. Оригиналы доступны только после оплаты или согласования.':'Примеры работ с коротким описанием задачи, результата и формата.'}</p></div>${cards}`;showPage('galleryScreen',{userGesture:true})}
 function galleryWorks(title){return `<div class="gallery">${IMG.map((src,i)=>`<a class="work watermark" href="#img${i+1}">${i===3?'<div class="price">100 ₽</div>':''}<span class="caption">${title} · ${String(i+1).padStart(2,'0')}</span><img src="${src}" alt="${title}"></a>`).join('')}</div>`}
 function caseWorks(type,title){const icons={case:'Открыть кейс',audio:'Слушать',text:'Читать',gallery:'Смотреть'};return `<div class="case-grid">${[1,2,3,4,5,6].map((n,i)=>`<article class="case-card"><div class="case-thumb"><img src="${IMG[i%IMG.length]}" alt="${title}">${type==='audio'?'<div class="play">♫</div>':type==='case'?'<div class="play">▶</div>':''}</div><div class="case-text"><h3>${title} · проект ${n}</h3><p>Короткое описание: для кого сделано, какая задача решалась, где можно использовать результат.</p><div class="case-actions"><button class="btn gold">${icons[type]||'Открыть'}</button><button class="btn">Заказать похожее</button></div></div></article>`).join('')}</div>`}
 // Порядок: закат → неон → закат(книга-середина) → неон → закат → неон
 const ORDER = ['visual','video','content','web','music','agents'];
 document.getElementById('directionsGrid').innerHTML=ORDER.map(id=>directionCard(id,DATA[id])).join('');
 document.addEventListener('contextmenu',e=>{if(e.target.closest('.work')||e.target.closest('.modal'))e.preventDefault()});
-/* TEMP LOCAL: переключатель видеошапки + звук + плавный loop */
+/* TEMP LOCAL: контекстная видеошапка — home / inner + первый проход со звуком */
 (function(){
-  const HERO_VIDEO_SOURCES=[
-    '../video/var 01.mp4',
-    '../video/в работу  шапка 01.mp4',
-    '../video/в работу 01.mp4',
-    '../video/в работу.mp4'
-  ];
-  const SOUND_VARIANTS={0:true,1:false,2:true,3:true};
+  const HERO_HOME='../video/var 01.mp4';
+  const HERO_INNER='../video/в работу.mp4';
   const LOOP_LEAD=0.2;
   const video=document.getElementById('heroBannerVideo');
-  const panel=document.getElementById('heroVideoTestPanel');
-  const soundBtn=document.getElementById('heroEnableSoundBtn');
-  if(!video||!panel||!soundBtn)return;
-  let currentIdx=0;
-  let soundEnabled=false;
+  if(!video)return;
+  let currentCtx='home';
+  let firstPassPending=false;
   let loopSeeking=false;
   let loopCount=0;
-  let lastLoopAt=0;
-  function applyAudioPolicy(){
-    const canSound=soundEnabled&&SOUND_VARIANTS[currentIdx];
-    video.muted=!canSound;
-    video.volume=canSound?0.5:1;
-    soundBtn.disabled=!SOUND_VARIANTS[currentIdx];
-    soundBtn.textContent=canSound?'Звук: вкл (0.5)':'Включить звук';
-    soundBtn.classList.toggle('hero-video-test-sound-on',!!canSound);
+  function endsWithPath(src,rel){return decodeURIComponent(src||'').replace(/\\/g,'/').endsWith(rel.replace(/^\.\.\//,''))}
+  function muteAfterFirstPass(reason){
+    if(!firstPassPending)return;
+    firstPassPending=false;
+    video.muted=true;
+    window.__heroVideoState=Object.assign({},window.__heroVideoState||{},{firstPassDone:true,muteReason:reason,muted:video.muted});
   }
   function smoothLoopTick(){
     if(loopSeeking||!video.duration||!isFinite(video.duration))return;
     if(video.duration-video.currentTime<=LOOP_LEAD){
+      if(firstPassPending)muteAfterFirstPass('end-of-first-pass');
       loopSeeking=true;
-      const now=performance.now();
-      const gap=lastLoopAt?now-lastLoopAt:0;
-      lastLoopAt=now;
       loopCount+=1;
       video.currentTime=0;
       video.play().catch(function(){});
       loopSeeking=false;
-      window.__heroLoopDebug={loopCount:loopCount,lastGapMs:Math.round(gap),currentTime:video.currentTime,duration:video.duration};
+      window.__heroVideoState=Object.assign({},window.__heroVideoState||{},{loopCount:loopCount,currentTime:video.currentTime,duration:video.duration,muted:video.muted});
     }
   }
-  function setHeroVideo(idx){
-    const src=HERO_VIDEO_SOURCES[idx];
-    if(!src)return;
-    currentIdx=idx;
-    if(video.getAttribute('src')!==src){
+  function startPlayback(userGesture){
+    video.volume=1;
+    if(userGesture){
+      video.muted=false;
+      firstPassPending=true;
+      return video.play().then(function(){window.__heroVideoState=Object.assign({},window.__heroVideoState||{},{autoplaySoundAttempt:'gesture-ok',muted:video.muted});}).catch(function(){
+        video.muted=true;
+        firstPassPending=true;
+        window.__heroVideoState=Object.assign({},window.__heroVideoState||{},{autoplaySoundAttempt:'gesture-fallback-muted'});
+        return video.play().catch(function(){});
+      });
+    }
+    video.muted=false;
+    firstPassPending=true;
+    return video.play().then(function(){window.__heroVideoState=Object.assign({},window.__heroVideoState||{},{autoplaySoundAttempt:'autoplay-unmuted-ok',muted:video.muted});}).catch(function(){
+      video.muted=true;
+      firstPassPending=true;
+      window.__heroVideoState=Object.assign({},window.__heroVideoState||{},{autoplaySoundAttempt:'autoplay-blocked-muted'});
+      return video.play().catch(function(){});
+    });
+  }
+  function loadContext(ctx,userGesture){
+    const src=ctx==='home'?HERO_HOME:HERO_INNER;
+    currentCtx=ctx;
+    loopCount=0;
+    firstPassPending=false;
+    if(!endsWithPath(video.getAttribute('src'),src)){
       video.src=src;
       video.load();
+    }else{
+      video.currentTime=0;
     }
-    applyAudioPolicy();
-    video.play().catch(function(){});
-    panel.querySelectorAll('button[data-hero-video]').forEach(function(btn){
-      btn.classList.toggle('active',+btn.dataset.heroVideo===idx);
-    });
+    window.__heroVideoState={ctx:ctx,src:src,userGesture:!!userGesture,firstPassDone:false,muted:video.muted,volume:video.volume};
+    startPlayback(userGesture);
+  }
+  function onNavigate(pageId,userGesture){
+    const ctx=pageId==='home'?'home':'inner';
+    if(ctx===currentCtx)return;
+    loadContext(ctx,userGesture);
   }
   video.addEventListener('timeupdate',smoothLoopTick);
   video.addEventListener('ended',function(){
+    if(firstPassPending)muteAfterFirstPass('ended');
     if(loopSeeking)return;
     loopSeeking=true;
     video.currentTime=0;
     video.play().catch(function(){});
     loopSeeking=false;
   });
-  soundBtn.addEventListener('click',function(e){
-    e.preventDefault();
-    if(!SOUND_VARIANTS[currentIdx])return;
-    soundEnabled=true;
-    applyAudioPolicy();
-    video.play().catch(function(){});
-  });
-  panel.querySelectorAll('button[data-hero-video]').forEach(function(btn){
-    btn.addEventListener('click',function(e){
-      e.preventDefault();
-      setHeroVideo(+btn.dataset.heroVideo);
-    });
-  });
-  applyAudioPolicy();
-  window.setHeroVideoTest=setHeroVideo;
-  window.__heroVideoTest={getState:function(){return{idx:currentIdx,soundEnabled:soundEnabled,muted:video.muted,volume:video.volume,paused:video.paused,currentTime:video.currentTime,duration:video.duration,loopDebug:window.__heroLoopDebug};}};
+  window.__heroVideoRouter={onNavigate:onNavigate,loadContext:loadContext,getState:function(){return Object.assign({ctx:currentCtx,firstPassPending:firstPassPending,loopCount:loopCount,src:video.currentSrc||video.src,muted:video.muted,volume:video.volume,paused:video.paused,currentTime:video.currentTime,duration:video.duration},window.__heroVideoState||{})}};
+  loadContext('home',false);
 })();
 </script>
 
